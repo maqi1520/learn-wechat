@@ -1,0 +1,7 @@
+<!--components/todo-item/todo-item.wxml-->
+
+	<view class="item{{ item.completed ? ' completed' : '' }}"  bindtap="toggleTodoHandle" data-id="{{ item._id }}" data-item="{{ item }}">
+		<icon class="checkbox" type="{{ item.completed ? 'success' : 'circle' }}" />
+		<text class="name">{{ item.name }}</text>
+		<icon class="remove" type="clear" size="16" catchtap="removeTodoHandle" data-id="{{ item._id }}" />
+	</view>

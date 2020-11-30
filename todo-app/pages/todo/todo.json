@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "Todo",
+  "usingComponents": {
+    "todo-item": "../../components/todo-item/todo-item",
+    "mp-icon": "weui-miniprogram/icon/icon"
+  }
+}

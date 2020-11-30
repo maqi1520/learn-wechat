@@ -1,0 +1,26 @@
+<!--pages/todo/todo.wxml-->
+<view class="page-todo">
+	<view class="header">
+		<mp-icon class="plus" icon="add" color="black" size="{{20}}"></mp-icon>
+		<input class="new-todo" value="{{ input }}" placeholder="Anything here..." auto-focus bindinput="inputChangeHandle" bindconfirm="addTodoHandle" />
+	</view>
+	<block wx:if="{{ todos.length }}">
+		<view class="todos">
+			<!-- List items should get the class `completed` when marked as completed -->
+			<block wx:for="{{ todos }}" wx:key="_id">
+				<todo-item bindreload="load" item="{{item}}"/>
+			</block>
+		</view>
+		<view class="footer">
+			<text class="btn" bindtap="toggleAllHandle">Toggle all</text>
+			<text wx:if="{{ leftCount }}">{{ leftCount }} {{ leftCount === 1 ? 'item' : 'items' }} left</text>
+			<text class="btn" wx:if="{{ todos.length > leftCount }}" bindtap="clearCompletedHandle">Clear completed</text>
+		</view>
+	</block>
+	<block wx:else>
+		<view class="empty">
+			<text class="title">Congratulations!</text>
+			<text class="content">There's no more work left.</text>
+		</view>
+	</block>
+</view>

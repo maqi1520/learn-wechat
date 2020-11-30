@@ -1,0 +1,16 @@
+{
+  "version": "2.0",
+  "envId": "next-5g925nky83ece5ae",
+  "framework": {
+    "name": "koa-starter",
+    "plugins": {
+      "node": {
+        "use": "@cloudbase/framework-plugin-node",
+        "inputs": {
+          "name": "koa-starter",
+          "path": "/koa-starter"
+        }
+      }
+    }
+  }
+}
